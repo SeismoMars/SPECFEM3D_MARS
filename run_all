@@ -1,0 +1,15 @@
+#!/bin/csh
+##SBATCH -C fat
+#SBATCH -t 2:00:00
+#SBATCH -N 24
+#SBATCH --ntasks-per-node=16
+#SBATCH --error=error.txt
+#SBATCH --output=out.txt
+cd /tigress/bozdag/MARS/SSR_R1/specfem3d_marsglobe
+#./change_simulation_type.pl -F
+./go_mesher
+./go_solver
+#./change_simulation_type.pl -b
+#./go_solver
+#
+
